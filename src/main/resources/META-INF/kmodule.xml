@@ -1,5 +1,10 @@
 <kmodule xmlns="http://www.drools.org/xsd/kmodule" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <kbase name="PHM" default="true" eventProcessingMode="stream" equalsBehavior="equality">
-        <ksession name="phm" type="stateless" default="true" clockType="realtime" />
+        <ksession name="phm" type="stateless" default="true" clockType="realtime">
+            <listeners>
+                <ruleRuntimeEventListener type="com.health_insurance.service.listeners.PHMRuleRuntimeEventListener"/>
+                <agendaEventListener type="com.health_insurance.service.listeners.PHMAgendaEventListener"/>
+            </listeners>
+        </ksession>
     </kbase>
 </kmodule>
