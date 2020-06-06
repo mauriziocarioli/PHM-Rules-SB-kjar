@@ -31,7 +31,17 @@
       <version>2.10.3</version>
       <scope>provided</scope>
     </dependency>
-  </dependencies>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-canonical-model</artifactId>
+      <version>${version.org.kie}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.drools</groupId>
+      <artifactId>drools-model-compiler</artifactId>
+      <version>${version.org.kie}</version>
+    </dependency>
+      </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -39,6 +49,9 @@
         <artifactId>kie-maven-plugin</artifactId>
         <version>${version.org.kie}</version>
         <extensions>true</extensions>
+        <configuration>
+          <generateModel>YES</generateModel>
+        </configuration>
       </plugin>
     </plugins>
   </build>
